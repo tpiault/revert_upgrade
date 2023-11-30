@@ -7,5 +7,6 @@ Target = *
 Description = Save the current versions of upgraded packages to a file before upgrading
 When = PreTransaction
 Exec = /usr/bin/preupgrade_state
+Depends = expac
 AbortOnFail = true
 NeedsTargets
