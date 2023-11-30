@@ -1,0 +1,3 @@
+#! /usr/bin/sh
+ 
+while read -r line; do echo "https://archive.archlinux.org/packages/.all/$line"; done | pacman -U -

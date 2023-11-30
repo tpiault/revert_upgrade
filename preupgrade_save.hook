@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Upgrade
+Type = Package
+Target = *
+
+[Action]
+Description = Save the current versions of upgraded packages to a file before upgrading
+When = PreTransaction
+Exec = /usr/bin/preupgrade_state
+AbortOnFail = true
+NeedsTargets

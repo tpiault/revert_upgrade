@@ -1,0 +1,14 @@
+#! /usr/bin/sh
+
+# Save data to file
+basepath=/usr/share/upgrades
+mkdir -p "$basepath" 
+targetfile="$basepath"/"$(date '+%d-%m-%Y@%T')"
+expac "%n-%v-%a.pkg.tar.zst" - | while read -r line; do echo "${line%->*}"; done > "$targetfile";
+
+# Update symlink
+rm -f "$basepath"/latest
+ln -s "$targetfile" "$basepath"/latest
+
+# Remove old files
+find "$basepath"/ -mindepth 1 -mtime 14 -delete
