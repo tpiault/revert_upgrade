@@ -8,5 +8,5 @@ Package lists are created in `/usr/share/upgrades/`, and files older than 14 day
 ## Usage
 
 ```sh
-revert_upgrade /usr/share/upgrades/latest
+revert_upgrade < /usr/share/upgrades/latest
 ```
